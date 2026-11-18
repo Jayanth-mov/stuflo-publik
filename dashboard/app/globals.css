@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* StuFlo dashboard base.
+   Design-system color + type tokens live in design-tokens.css (imported in
+   layout.tsx before this file). Dark mode rides on <html data-theme="dark">. */
+
+html {
+  color-scheme: light;
+}
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: var(--font-body-size);
+  line-height: 1.5;
+  background: var(--paper);
+  color: var(--fg1);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}

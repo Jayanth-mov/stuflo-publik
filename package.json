@@ -1,0 +1,27 @@
+{
+  "name": "stuflo-app",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "dashboard",
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspace stuflo-dashboard",
+    "build": "npm run build --workspace stuflo-dashboard",
+    "verify": "npm run typecheck && npm test && npm run lint && npm run build",
+    "dev:api": "npm run dev --workspace @stuflo/worker-api",
+    "dev:dashboard": "npm run dev --workspace stuflo-dashboard",
+    "deploy:api": "npm run deploy --workspace @stuflo/worker-api",
+    "deploy:dashboard": "npm run deploy:cloudflare --workspace stuflo-dashboard",
+    "release": "npm run verify && npm run deploy:api && npm run deploy:dashboard",
+    "db:generate": "npm run db:generate --workspace @stuflo/db",
+    "db:migrate": "npm run db:migrate --workspace @stuflo/db",
+    "db:check": "npm run db:check --workspace @stuflo/db"
+  },
+  "devDependencies": {
+    "drizzle-orm": "^0.45.2"
+  }
+}

@@ -1,0 +1,22 @@
+# Copy to .dev.vars for local development. Never commit .dev.vars.
+ADMIN_EMAILS=owner@example.com
+CLOUDFLARE_ACCOUNT_ID=replace-with-your-account-id
+CLOUDFLARE_AI_TOKEN=replace-with-an-ai-gateway-scoped-token
+
+# Added as a Hyperdrive binding after the managed Postgres database is created.
+DATABASE_URL=postgres://user:password@host:5432/stuflo
+
+# JSON object of base64url-encoded 32-byte AES keys.
+COOKIE_ENCRYPTION_KEYS={"cookie-key-1":"replace-with-base64url-key"}
+ACTIVE_COOKIE_ENCRYPTION_KEY_ID=cookie-key-1
+
+GOOGLE_CLIENT_ID=replace-with-google-oauth-client-id
+GOOGLE_CLIENT_SECRET=replace-with-google-oauth-client-secret
+GOOGLE_OAUTH_STATE_SECRET=replace-with-long-random-state-key
+RESEND_API_KEY=replace-with-resend-api-key
+STRIPE_SECRET_KEY=replace-with-stripe-secret-key
+STRIPE_WEBHOOK_SECRET=replace-with-stripe-webhook-secret
+STRIPE_STUFLO_MONTHLY_PRICE_ID=replace-with-price-id
+STRIPE_STUFLO_YEARLY_PRICE_ID=replace-with-price-id
+STRIPE_STUPRO_MONTHLY_PRICE_ID=replace-with-price-id
+STRIPE_STUPRO_YEARLY_PRICE_ID=replace-with-price-id

@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  margin: 0;
+  background: #fbf7ef;
+  color: #1d1111;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+main {
+  padding: 17px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.wordmark {
+  width: 108px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0;
+}
+
+.brand p,
+.fine-print,
+.status,
+.host,
+.steps,
+.label {
+  color: #6f6260;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.panel {
+  border: 1px solid #eadfd4;
+  border-radius: 8px;
+  background: #fffdf8;
+  padding: 13px;
+  box-shadow: 0 8px 20px rgba(91, 44, 35, 0.07);
+}
+
+.current {
+  border: 1px solid #efe3d8;
+  border-radius: 8px;
+  background: #fbf7ef;
+  padding: 9px 10px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 2px;
+  color: #8f7c79;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.host {
+  word-break: break-word;
+  color: #2b1b1a;
+  font-weight: 700;
+}
+
+.steps {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+.steps li + li {
+  margin-top: 5px;
+}
+
+button {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  border-radius: 8px;
+  background: #b7183f;
+  color: #fff8ee;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #9d1638;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.actions {
+  display: grid;
+  gap: 8px;
+}
+
+.secondary-button {
+  border: 1px solid #eadfd4;
+  background: #fffdf8;
+  color: #6b1a32;
+}
+
+.secondary-button:hover {
+  background: #f4ebdf;
+}
+
+.status {
+  min-height: 20px;
+  margin-top: 10px;
+  border-radius: 7px;
+}
+
+.status.ok {
+  color: #177245;
+}
+
+.status.error {
+  color: #b42318;
+}
+
+.status.pending {
+  color: #8a5419;
+}
+
+.links {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.link-button {
+  min-height: 34px;
+  border: 1px solid #eadfd4;
+  background: #fffdf8;
+  color: #6b1a32;
+  font-size: 13px;
+}
+
+.link-button:hover {
+  background: #f4ebdf;
+}
+
+.fine-print {
+  margin-top: 12px;
+}

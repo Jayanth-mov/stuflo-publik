@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StuFlo Canvas Connector</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <div class="brand">
+        <img class="wordmark" src="icons/stuflo-wordmark.svg" alt="StuFlo">
+        <div>
+          <h1>Canvas Connector</h1>
+          <p>Link Canvas to your signed-in StuFlo dashboard.</p>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="current">
+          <span class="label">Current tab</span>
+          <p id="host" class="host">Checking...</p>
+        </div>
+
+        <ol class="steps">
+          <li>Open your Canvas dashboard and sign in.</li>
+          <li>Keep StuFlo open in another signed-in tab.</li>
+          <li>Grant permission for this Canvas site.</li>
+          <li>Connect Canvas to StuFlo.</li>
+        </ol>
+
+        <div class="actions">
+          <button id="grant-permission" class="secondary-button" type="button" disabled>Grant Canvas permission</button>
+          <button id="connect" type="button" disabled>Connect Canvas to StuFlo</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <div class="links">
+        <button id="open-stuflo" class="link-button" type="button">Open StuFlo</button>
+        <button id="open-privacy" class="link-button" type="button">Privacy</button>
+      </div>
+
+      <p class="fine-print">
+        Connect only from your signed-in Canvas page. StuFlo receives this site's cookies to validate and save your Canvas session. StuFlo never receives your Canvas password.
+      </p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

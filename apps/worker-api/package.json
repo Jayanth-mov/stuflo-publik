@@ -1,0 +1,34 @@
+{
+  "name": "@stuflo/worker-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types",
+    "typecheck": "wrangler types && tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@cloudflare/puppeteer": "^1.3.0",
+    "@stuflo/auth": "file:../../packages/auth",
+    "@stuflo/billing": "file:../../packages/billing",
+    "@stuflo/calendar": "file:../../packages/calendar",
+    "@stuflo/crypto": "file:../../packages/crypto",
+    "@stuflo/db": "file:../../packages/db",
+    "@stuflo/lms": "file:../../packages/lms",
+    "@stuflo/usage": "file:../../packages/usage",
+    "agents": "^0.20.1",
+    "jose": "^6.2.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.10",
+    "wrangler": "4.119.0"
+  },
+  "overrides": {
+    "undici": "^7.29.0"
+  }
+}
