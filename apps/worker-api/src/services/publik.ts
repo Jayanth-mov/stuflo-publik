@@ -1,7 +1,7 @@
 import { WebCryptoKeyring, type EncryptedEnvelope } from '@stuflo/crypto';
 import type { StufloEnv } from '../env';
 
-export const APP_SLUG = "stuflo";
+export const APP_SLUG = "stuflo-publik";
 const APP_VERSION = '0.1.0';
 const ORIGIN = 'https://publikhq.com';
 const RECHECK = 10 * 60_000;

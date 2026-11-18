@@ -1,7 +1,7 @@
 import { generateEncodedAesKey } from '@stuflo/crypto';
 import { describe, expect, it, vi } from 'vitest';
 import type { StufloEnv } from '../src/env';
-import { PublikConnectionService, publikInstallId, publikLink } from '../src/services/publik';
+import { APP_SLUG, PublikConnectionService, publikInstallId, publikLink } from '../src/services/publik';
 
 function setup() {
   const credential = ['pk', 'testinstallcredential'].join('_');
@@ -37,7 +37,7 @@ describe('Publik hosted connection', () => {
       .mockResolvedValueOnce(Response.json({ claim_state: 'anonymous', claim_url: t.claimUrl }));
     await expect(t.service.status('account-a', true)).resolves.toEqual({ state: 'sign_in', claimUrl: t.claimUrl });
     const install = JSON.parse(String(t.stub.mock.calls[0]?.[1]?.body));
-    expect(install).toMatchObject({ os: 'web', app_slug: 'stuflo', dialects: ['responses'] });
+    expect(install).toMatchObject({ os: 'web', app_slug: APP_SLUG, dialects: ['responses'] });
     expect(install).not.toHaveProperty('userId');
     expect(JSON.stringify([...t.rows])).not.toContain(t.credential);
     await expect(t.service.resolve()).resolves.toBeNull();
@@ -59,7 +59,7 @@ describe('Publik hosted connection', () => {
     t.stub.mockResolvedValueOnce(new Response(null, { status: 204 }));
     await t.service.activity();
     const event = JSON.parse(String(t.stub.mock.calls[2]?.[1]?.body));
-    expect(event).toEqual({ v: 1, app: 'stuflo', os: 'web', app_version: '0.1.0', event: 'app_opened', install_id: expect.any(String) });
+    expect(event).toEqual({ v: 1, app: APP_SLUG, os: 'web', app_version: '0.1.0', event: 'app_opened', install_id: expect.any(String) });
     await t.service.activity();
     expect(t.stub).toHaveBeenCalledTimes(3);
     await t.service.remove();

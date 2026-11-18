@@ -4,6 +4,10 @@ StuFlo is an academic assistant that combines course material, a student's
 preferences, and their calendar to answer questions with sources and help
 plan their work. The hosted app is at [app.stuflo.com](https://app.stuflo.com).
 
+I started building StuFlo in a private, closed-source repository in summer
+2026 and have been working on it for months. I copied the code into this
+new public repository to release the same project as open source.
+
 - `dashboard/`: Next.js and React web app, with OpenNext support on Cloudflare.
 - `apps/worker-api/`: TypeScript API and one persistent Cloudflare Durable
   Object agent per student. The model uses tools to query course and calendar
